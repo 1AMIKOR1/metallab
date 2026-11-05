@@ -1,0 +1,68 @@
+/* MetalLab PR1 extension - scoped visual layer, no existing selectors overridden. */
+#pr1Launcher {position:fixed;right:20px;bottom:18px;z-index:990;display:flex;gap:12px;align-items:center;padding:11px 16px;border:1px solid #c3e3dc;border-radius:999px;background:#fff;color:#113b38;font:600 14px/1.2 system-ui, sans-serif;box-shadow:0 8px 28px #091e3026;cursor:pointer}
+#pr1Launcher .pr1-launch-count {padding:4px 8px;border-radius:999px;background:#e3f4f0;color:#13695f;font-size:12px}
+.pr1-sidebar {font-weight:650!important}
+.pr1-modal[hidden] {display:none!important}
+.pr1-modal {position:fixed;inset:0;z-index:2000;display:flex;justify-content:center;align-items:center;padding:20px;font:400 15px/1.5 system-ui,-apple-system,'Segoe UI',Arial,sans-serif;color:#17263b}
+.pr1-backdrop {position:absolute;inset:0;background:#0d1727b8}
+.pr1-body {position:relative;z-index:1;background:white;width:min(870px,100%);max-height:calc(100vh - 32px);overflow-y:auto;border-radius:18px;padding:26px 30px;box-shadow:0 20px 80px #0005}
+.pr1-head {display:flex;align-items:flex-start;justify-content:space-between;gap:15px}
+.pr1-head h2 {font-size:26px;line-height:1.18;margin:4px 0 8px;color:#17263b}
+.pr1-head p {margin:0 0 14px;color:#68778c}
+.pr1-kicker {font-size:12px;letter-spacing:.08em;font-weight:800;color:#17786e}
+.pr1-close {font-size:28px;line-height:1;border:0;background:transparent;padding:0 5px;cursor:pointer;color:#46566b}
+.pr1-subline {display:flex;gap:10px;flex-wrap:wrap;justify-content:space-between;margin-top:8px;font-size:14px}
+.pr1-progress {height:9px;margin:9px 0 6px;border-radius:99px;background:#e7ebf2;overflow:hidden}
+.pr1-progress span {display:block;height:100%;background:#16877a;transition:width .2s ease}
+.pr1-muted,.pr1-foot {font-size:13px;color:#68788b}
+.pr1-steps {list-style:none;padding:0;margin:18px 0;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.pr1-step {display:flex;gap:12px;padding:14px;border:1px solid #e6eaf0;border-radius:12px}
+.pr1-number {display:flex;align-items:center;justify-content:center;flex:0 0 28px;width:28px;height:28px;border:1px solid #cbd4e0;border-radius:50%;color:#536579;font-weight:650}
+.pr1-number.pr1-done {background:#dff3eb;color:#13765a;border-color:#a8d9c8}
+.pr1-step-body {min-width:0}
+.pr1-step-body strong {font-size:14px}
+.pr1-step-body p {font-size:13px;margin:5px 0 8px;color:#68788b}
+.pr1-step-body button,.pr1-box button,.pr1-actions button {font:600 13px system-ui,-apple-system,'Segoe UI',Arial,sans-serif;border:1px solid #bfd8d3;background:#edf7f4;color:#17665d;padding:8px 12px;border-radius:8px;cursor:pointer}
+.pr1-box {border:1px solid #e6eaf0;border-radius:12px;padding:13px 15px;margin-bottom:12px}
+.pr1-check {display:flex;align-items:center;gap:10px}
+.pr1-check input {width:18px;height:18px}
+.pr1-box textarea {box-sizing:border-box;display:block;resize:vertical;width:100%;border-radius:8px;border:1px solid #cbd4e0;padding:10px;margin:8px 0;font:inherit}
+.pr1-actions {display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.pr1-actions button {background:#156f65;color:#fff}
+.pr1-actions button.pr1-secondary {color:#17665d;background:#fff}
+.pr1-alert {padding:10px 12px;background:#fff3eb;color:#93430b;border:1px solid #f0d6c6;border-radius:8px}
+#pr1PrintContent {display:none}
+body.pr1-panel-open {overflow:hidden}
+@media(max-width:700px){.pr1-modal{padding:8px}.pr1-body{padding:18px 16px;max-height:calc(100vh - 16px)}.pr1-steps{grid-template-columns:1fr}.pr1-head h2{font-size:22px}#pr1Launcher{right:12px;bottom:12px}}
+@media print {
+  body.pr1-printing .app-layout,body.pr1-printing #pr1Launcher,body.pr1-printing #pr1Panel,body.pr1-printing #toast,body.pr1-printing #saveWarning {display:none!important}
+  body.pr1-printing #pr1PrintContent {display:block!important;position:static;background:#fff;color:#000;font:12pt/1.4 'Times New Roman',serif}
+  body.pr1-printing .pr1-report {width:100%;margin:0;padding:0}
+  body.pr1-printing .pr1-report h1 {font-size:17pt;margin:0 0 9pt}
+  body.pr1-printing .pr1-report h2 {font-size:14pt;margin:16pt 0 8pt}
+  body.pr1-printing .pr1-report table {width:100%;border-collapse:collapse;table-layout:fixed;margin:7pt 0;break-inside:auto}
+  body.pr1-printing .pr1-report td,body.pr1-printing .pr1-report th {border:1px solid #555;padding:4pt;overflow-wrap:anywhere;vertical-align:top;font-size:10pt}
+  body.pr1-printing .pr1-report tr {break-inside:avoid}
+  body.pr1-printing .pr1-print-note {font-size:9pt}
+  @page {size:A4;margin:17mm}
+}
+/* PR1 v1.1: explicit revision choice and draft/readability improvements. */
+.pr1-alert p {margin:7px 0}
+.pr1-alert .pr1-switch-btn {display:inline-flex;margin-top:5px;padding:9px 13px;background:#9b3c17;border:1px solid #9b3c17;border-radius:8px;color:white;font:600 13px system-ui,sans-serif;cursor:pointer}
+.pr1-notice {display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;background:#f0f8f5;border:1px solid #b6d8c9;border-radius:9px;color:#1e6250;padding:10px 12px;margin:14px 0}
+.pr1-notice button {border:1px solid #8dc7ae;background:white;border-radius:7px;color:#17665d;padding:7px 11px;cursor:pointer;font:600 13px system-ui,sans-serif}
+.pr1-autosave {display:inline-block;color:#64748b;font-size:12px;padding:6px 0}
+@media print {
+  body.pr1-printing .pr1-report thead {display:table-header-group}
+  body.pr1-printing .pr1-report .pr1-test-table {table-layout:fixed}
+  body.pr1-printing .pr1-report .pr1-test-table th:first-child {width:12%}
+  body.pr1-printing .pr1-report .pr1-test-table th:nth-child(2) {width:26%}
+  body.pr1-printing .pr1-report .pr1-test-table th:nth-child(3) {width:39%}
+  body.pr1-printing .pr1-report .pr1-test-table th:nth-child(4) {width:23%}
+  body.pr1-printing .pr1-draft-banner {padding:7pt;border:1pt solid #a22;font-weight:bold;color:#741e16}
+  body.pr1-printing .pr1-complete-banner {font-style:italic}
+}
+@media print {
+  body.pr1-printing .pr1-report h2 {break-after:avoid-page;page-break-after:avoid}
+  body.pr1-printing .pr1-report .pr1-test-table {break-inside:avoid-page;page-break-inside:avoid}
+}
